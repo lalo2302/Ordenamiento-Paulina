@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
         Scanner scan = new Scanner(System.in);
         int opc;
         do{
@@ -14,22 +13,29 @@ public class Main {
             //Llenas el arreglo con numeros no repetidos
             for (i = 0; i < cant; i++){
                 while (true){
-                    int temp = (int)Math.floor(Math.random() * cant);
+                    int temp = (int)Math.floor(Math.random() * cant); //Generar número random
+
+                    //Verificar si el número generado ya existe
                     boolean existe = false;
                     for (j = 0; j < numeros.length; j++){
-                        if (numeros[j] == temp)
+                        if (numeros[j] == temp) {
                             existe = true;
                             break;
+                        }
                     }
                     if (!existe) {
                         numeros[i] = temp;
                         break;
                     }
+
                 }
             }
 
             DistSimple dist = new DistSimple();
-            dist.Ordenar(numeros,cant);
+            IntSimple inter = new IntSimple();
+
+            dist.Ordenar(numeros,cant); //Distribución Simple
+            inter.Ordenar(numeros, cant); // Intercalación Simple
             System.out.println("\nQuieres volver a hacerlo?\n1.-Si\n0.-No");
             opc = scan.nextInt();
         }while(opc != 0);

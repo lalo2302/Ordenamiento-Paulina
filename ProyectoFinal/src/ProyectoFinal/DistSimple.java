@@ -5,8 +5,6 @@ package ProyectoFinal;
  */
 public class DistSimple {
     public void Ordenar(int[] numeros,int cant){
-        System.out.println("Metodo de distribucion simple");
-        System.out.println("----------------------------------");
         //Obtienes el numero mayor del arreglo
         long startTime = System.nanoTime();
         int maxNum = 0, i, j, itDS = 0;
@@ -14,6 +12,7 @@ public class DistSimple {
             if(numeros[i] > maxNum)
                 maxNum = numeros[i];
         }
+
         //Ingresas el numero en la posicion acorde a su valor
         int[] DS = new int[maxNum + 1];
         for (i = 0; i < cant; i++){
@@ -31,7 +30,10 @@ public class DistSimple {
             if (DS[i] != 0)
                 System.out.print(DS[i] + " ");
         }
-        System.out.println("\nTotal de iteraciones: " + itDS);
+
+        System.out.println("\n\nMétodo de distribución simple");
+        System.out.println("----------------------------------");
+        System.out.println("Total de iteraciones: " + itDS);
         System.out.println("Tiempo de ejecucion: " + elapsedTime + " nanosegundos");
     }
 }
