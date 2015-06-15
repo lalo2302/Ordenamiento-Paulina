@@ -18,10 +18,10 @@ public class Main {
                     //Verificar si el número generado ya existe
                     boolean existe = false;
                     for (j = 0; j < numeros.length; j++){
-                        if (numeros[j] == temp) {
+                        if (numeros[j] == temp)
                             existe = true;
                             break;
-                        }
+
                     }
                     if (!existe) {
                         numeros[i] = temp;
@@ -30,7 +30,7 @@ public class Main {
 
                 }
             }
-
+            //Mandas a llamar el metodo de ordenacion
             DistSimple dist = new DistSimple();
             IntSimple inter = new IntSimple();
 
